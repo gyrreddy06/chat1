@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --electric-blue: #1e90ff;
+    --neon-pink: #ff1493;
+    --lime-green: #32cd32;
+    --purple: #9370db;
+    --dark-bg: #121212;
+    --dark-surface: #1e1e1e;
+    --dark-card: #2a2a2a;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: #121212;
+    color: white;
+    font-family: "Inter", sans-serif;
+  }
+
+  .font-poppins {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+  }
+
+  .font-nunito {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+  }
+}
+
+@layer components {
+  .pill-button {
+    border-radius: 9999px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(135deg, #1e90ff, #ff1493);
+  }
+
+  .pill-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(30, 144, 255, 0.3);
+  }
+
+  .message-bubble {
+    border-radius: 0.75rem;
+    padding: 0.5rem 1rem;
+    max-width: 20rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .message-bubble-sent {
+    background: linear-gradient(to right, #1e90ff, #ff1493);
+    color: white;
+    margin-left: auto;
+  }
+
+  .message-bubble-received {
+    background-color: #2a2a2a;
+    color: white;
+  }
+
+  .floating-action-button {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(135deg, #ff1493, #9370db);
+    box-shadow: 0 8px 20px rgba(255, 20, 147, 0.4);
+  }
+
+  .floating-action-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(255, 20, 147, 0.6);
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 20px rgba(30, 144, 255, 0.5);
+  }
+
+  .status-indicator {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 9999px;
+    background: radial-gradient(circle, #32cd32, #32cd32 40%, transparent 70%);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .slide-in {
+    animation: slideIn 0.3s ease-in-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
